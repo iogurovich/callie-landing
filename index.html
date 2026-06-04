@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Callie — An operator for getting older</title>
+<title>Callie Care, one AI agent for the calls of caring for aging parents</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -61,6 +61,26 @@
   .meta{margin-top:15px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--dim)}
   .meta b{color:var(--mut);font-weight:500}
 
+  /* HERO visual: warm photo + floating phone */
+  .hero-visual{position:relative;min-height:600px}
+  .hero-photo{position:absolute;top:34px;right:0;width:332px;height:418px;border-radius:24px;overflow:hidden;box-shadow:0 34px 64px -30px rgba(20,22,26,.42),0 0 0 1px rgba(18,20,24,.05);z-index:1}
+  .hero-photo img{width:100%;height:100%;object-fit:cover;filter:saturate(1.03) contrast(1.02)}
+  .hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,22,26,0) 42%,rgba(20,22,26,.46))}
+  .hero-photo .pcap{position:absolute;left:18px;right:18px;bottom:16px;color:#fff;z-index:2;text-align:right}
+  .hero-photo .pcap .pn{font-weight:600;font-size:15px;letter-spacing:-.01em}
+  .hero-photo .pcap .pm{font-size:12.5px;opacity:.92;margin-top:2px}
+  .hero-phone{position:absolute;left:-4px;top:0;z-index:3}
+  .hero-phone .phone{width:286px;border-radius:42px;padding:9px}
+  .hero-phone .phone-screen{height:564px;border-radius:34px}
+  .hero-phone .island{top:18px;width:92px;height:26px}
+  .hero-phone .statusbar{padding:13px 24px 10px;font-size:13px}
+  .hero-phone .app{padding:4px 14px 80px}
+  .hero-chip{position:absolute;z-index:4;display:flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--line);border-radius:13px;padding:10px 13px;box-shadow:0 18px 38px -18px rgba(20,22,26,.45);font-size:13px;font-weight:600;letter-spacing:-.01em;white-space:nowrap}
+  .hero-chip .hc{width:22px;height:22px;border-radius:50%;background:rgba(63,185,80,.13);border:1px solid rgba(63,185,80,.3);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
+  .hero-chip.c1{top:104px;right:-10px;animation:floaty 5s ease-in-out infinite}
+  .hero-chip.c2{bottom:104px;right:54px;animation:floaty 5.6s ease-in-out .8s infinite}
+  @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+
   /* PRODUCT PANEL (hero) */
   .panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden}
   .ptop{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid var(--line2)}
@@ -105,7 +125,7 @@
   /* iPhone frame */
   .phone-wrap{display:flex;justify-content:center}
   .phone{position:relative;width:340px;background:linear-gradient(160deg,#2a2c30,#141517);border-radius:48px;padding:11px;box-shadow:0 34px 70px -28px rgba(20,22,26,.45),0 0 0 1px rgba(0,0,0,.06)}
-  .phone-screen{position:relative;border-radius:38px;overflow:hidden;height:660px;background:#0a0b0d;color:#ededed;--bg:#0a0b0d;--bg2:#0f1012;--panel:#0f1012;--line:rgba(255,255,255,.09);--line2:rgba(255,255,255,.06);--txt:#ededed;--mut:#8b8f94;--dim:#5c6066;--faint:#3a3d42;--terra:#d65235;--terra2:#e8674a;--green:#3fb950;--blue:#4493f8}
+  .phone-screen{position:relative;border-radius:38px;overflow:hidden;height:660px;background:#fbfbfd;color:#14161a;--bg:#fbfbfd;--bg2:#f3f4f7;--panel:#f3f4f7;--line:rgba(18,20,24,.10);--line2:rgba(18,20,24,.06);--txt:#14161a;--mut:#5b616b;--dim:#9098a1;--faint:#c2c7cd;--terra:#d24a2c;--terra2:#e0572f;--green:#1f9d3f;--blue:#2f6fe0}
   .island{position:absolute;top:21px;left:50%;transform:translateX(-50%);width:106px;height:30px;background:#000;border-radius:16px;z-index:20}
   .statusbar{display:flex;align-items:center;justify-content:space-between;padding:15px 28px 12px;font-size:14px;font-weight:600}
   .statusbar .sbi{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600}
@@ -121,7 +141,7 @@
   @keyframes popcheck{0%{transform:scale(0) rotate(-14deg)}60%{transform:scale(1.18)}100%{transform:scale(1)}}
   @keyframes shimmove{0%{left:-46%}100%{left:100%}}
 
-  .phone .app{border:none;border-radius:0;background:transparent;padding:4px 16px 22px}
+  .phone .app{border:none;border-radius:0;background:transparent;padding:4px 16px 80px}
   .mc-head{display:flex;align-items:center;gap:11px;padding:8px 4px 15px}
   .mc-av{width:40px;height:40px;border-radius:50%;background:radial-gradient(circle at 50% 34%,#ec7156,#c2412a);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;color:#fff;flex-shrink:0;position:relative}
   .mc-av::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:2px solid rgba(214,82,53,.5);animation:ring 1.9s ease-out infinite}
@@ -133,7 +153,7 @@
   .mc-live .pd{width:6px;height:6px;border-radius:50%;background:var(--terra2);animation:pulse 1s infinite}
   .mc-live.done{color:var(--green);background:rgba(63,185,80,.13);border-color:rgba(63,185,80,.32)}
   .mc-live.done .pd{background:var(--green);animation:none}
-  .mc-bar{height:5px;border-radius:4px;background:rgba(255,255,255,.07);overflow:hidden;margin:0 4px 18px}
+  .mc-bar{height:5px;border-radius:4px;background:rgba(18,20,24,.08);overflow:hidden;margin:0 4px 18px}
   .mc-bar i{display:block;height:100%;width:0;border-radius:4px;background:linear-gradient(90deg,var(--terra),var(--terra2));transition:width .6s cubic-bezier(.4,0,.2,1)}
   .mc-bar.done i{background:linear-gradient(90deg,var(--green),#4fc466)}
 
@@ -142,7 +162,7 @@
   .lcard::before{content:"";position:absolute;top:0;bottom:0;left:0;width:34%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.14),transparent);transform:translateX(-130%);animation:sheen 2.8s ease-in-out infinite;pointer-events:none}
   .lcard.conn{background:linear-gradient(165deg,rgba(63,185,80,.13),rgba(255,255,255,.018));border-color:rgba(63,185,80,.32);box-shadow:0 18px 36px -22px rgba(63,185,80,.48)}
   .l-top{display:flex;align-items:center;gap:13px;position:relative}
-  .ltile{width:46px;height:46px;border-radius:13px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.13);display:flex;align-items:center;justify-content:center;font-size:21px;flex-shrink:0}
+  .ltile{width:46px;height:46px;border-radius:13px;background:rgba(18,20,24,.04);border:1px solid rgba(18,20,24,.09);display:flex;align-items:center;justify-content:center;font-size:21px;flex-shrink:0}
   .l-meta{flex:1;min-width:0}
   .lname{font-weight:600;font-size:16px;letter-spacing:-.01em;line-height:1.25}
   .lwho{font-size:12.5px;color:var(--mut);margin-top:2px}
@@ -150,11 +170,11 @@
   .lwave i{flex:1;background:linear-gradient(var(--terra2),rgba(214,82,53,.28));border-radius:2px;height:20%;animation:eq .8s ease-in-out infinite alternate}
   .lcard.conn .lwave i{background:linear-gradient(var(--green),rgba(63,185,80,.28));animation-duration:1.3s}
   .lstat{display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:12px;padding:6px 12px;border-radius:9px;position:relative}
-  .lstat.hold{color:var(--mut);background:rgba(255,255,255,.05);border:1px solid var(--line)}
+  .lstat.hold{color:var(--mut);background:rgba(18,20,24,.04);border:1px solid var(--line)}
   .lstat.hold .pd{width:7px;height:7px;border-radius:50%;background:var(--terra2);animation:pulse 1s infinite}
   .lstat.conn{color:var(--green);background:rgba(63,185,80,.13);border:1px solid rgba(63,185,80,.3)}
   .lstat.conn .pd{width:7px;height:7px;border-radius:50%;background:var(--green)}
-  .lshim{height:5px;border-radius:4px;background:rgba(255,255,255,.07);margin-top:15px;overflow:hidden;position:relative}
+  .lshim{height:5px;border-radius:4px;background:rgba(18,20,24,.08);margin-top:15px;overflow:hidden;position:relative}
   .lshim::after{content:"";position:absolute;top:0;height:100%;width:42%;border-radius:4px;background:linear-gradient(90deg,transparent,var(--terra2),transparent);left:-46%;animation:shimmove 1.15s ease-in-out infinite}
   .lcard.fin{background:linear-gradient(165deg,rgba(63,185,80,.15),rgba(255,255,255,.018));border-color:rgba(63,185,80,.34)}
   .lcard.fin::before{display:none}
@@ -169,6 +189,38 @@
   .dh{font-size:13.5px;font-weight:600;letter-spacing:-.01em;line-height:1.3}
   .ds{font-size:12px;color:var(--mut);margin-top:2px;line-height:1.4}
   .dtime{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--dim);flex-shrink:0;padding-top:3px}
+
+  /* avatar photo */
+  .mc-av img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block}
+  /* voice request from the family */
+  .vbubble{margin:2px 0 16px;background:linear-gradient(165deg,rgba(210,74,44,.11),rgba(210,74,44,.035));border:1px solid rgba(210,74,44,.24);border-radius:15px;padding:12px 13px}
+  .vbubble .vh{display:flex;align-items:center;gap:7px;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--terra);margin-bottom:10px}
+  .vbubble .vh .pd{width:6px;height:6px;border-radius:50%;background:var(--terra2);animation:pulse 1.1s infinite}
+  .vrow{display:flex;align-items:center;gap:11px}
+  .vmic{width:31px;height:31px;border-radius:50%;background:var(--terra);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+  .vwave{display:flex;align-items:center;gap:2.5px;height:22px;flex:1}
+  .vwave i{width:3px;border-radius:2px;background:var(--terra2);opacity:.78}
+  .vtx{font-size:13.5px;font-weight:600;color:var(--txt);margin-top:11px;line-height:1.35}
+  /* bottom composer */
+  .composer{position:absolute;left:0;right:0;bottom:0;display:flex;align-items:center;gap:9px;padding:11px 15px 15px;background:var(--bg);border-top:1px solid var(--line2);z-index:6}
+  .composer .cin{flex:1;background:var(--bg2);border:1px solid var(--line);border-radius:22px;padding:10px 15px;font-size:12.5px;color:var(--dim);font-weight:500}
+  .composer .cmic{position:relative;width:42px;height:42px;border-radius:50%;background:var(--terra);color:#fff;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;box-shadow:0 8px 18px -7px rgba(210,74,44,.6)}
+  .composer .cmic::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:2px solid rgba(210,74,44,.4);animation:ring 2s ease-out infinite}
+  /* up next (plan-then-execute) */
+  .req-slot .vbubble{animation:springin .45s cubic-bezier(.34,1.56,.64,1) both}
+  .mc-up{margin-top:12px;display:flex;align-items:center;gap:11px;padding:12px 13px;border-radius:14px;border:1px dashed var(--line);background:transparent;animation:springin .45s cubic-bezier(.34,1.56,.64,1) both}
+  .mc-up .uptile{width:29px;height:29px;border-radius:9px;background:rgba(18,20,24,.04);border:1px solid var(--line2);display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--mut);flex-shrink:0}
+  .mc-up .uph{font-size:13px;font-weight:600;letter-spacing:-.01em}
+  .mc-up .ups{font-size:11.5px;color:var(--mut);margin-top:1px}
+  .mc-up .uplab{margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);flex-shrink:0}
+  /* approval cards (family mission control phone) */
+  .appr{background:linear-gradient(165deg,rgba(210,74,44,.08),rgba(210,74,44,.02));border:1px solid rgba(210,74,44,.22);border-radius:14px;padding:13px 14px;margin-bottom:10px}
+  .appr-top{display:flex;align-items:center;gap:11px}
+  .appr-act{display:flex;gap:8px;margin-top:12px}
+  .appr-act .approve{background:var(--terra);color:#fff;border:none;font-weight:600;font-size:12.5px;padding:8px 14px;border-radius:9px;cursor:pointer;flex:1}
+  .appr-act .approve:hover{background:var(--terra2)}
+  .appr-act .decline{background:var(--bg2);color:var(--mut);border:1px solid var(--line);font-weight:500;font-size:12.5px;padding:8px 14px;border-radius:9px;cursor:pointer}
+  .phone-wrap.fam .phone-screen{height:560px}
 
   .replay{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--mut);background:var(--panel);border:1px solid var(--line);padding:8px 14px;border-radius:8px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;margin-top:16px;transition:.15s}
   .replay:hover{color:var(--txt);border-color:rgba(18,20,24,.22)}
@@ -196,6 +248,17 @@
   .wave{display:flex;align-items:center;gap:3px;height:40px}
   .wave i{width:3px;background:var(--terra);border-radius:3px;display:block;opacity:.85}
   .play{width:46px;height:46px;border-radius:50%;background:var(--terra);color:#fff;border:none;display:flex;align-items:center;justify-content:center;font-size:15px;cursor:pointer;flex-shrink:0}
+  .voicebox{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:24px}
+  .vb-top{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:22px}
+  .vb-h{font-weight:600;font-size:16px;letter-spacing:-.01em}
+  .vb-sel{display:flex;gap:4px;background:var(--bg2);border:1px solid var(--line2);border-radius:11px;padding:3px}
+  .vbtab{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--mut);background:transparent;border:none;padding:6px 13px;border-radius:8px;cursor:pointer;transition:.15s}
+  .vbtab.on{background:#fff;color:var(--txt);box-shadow:0 1px 3px rgba(18,20,24,.1)}
+  .vb-player{display:flex;align-items:center;gap:16px}
+  .vb-mid{flex:1;min-width:0}
+  .vb-meta{font-size:12.5px;color:var(--mut);margin-top:9px}
+  .vb-meta b{color:var(--txt);font-weight:600}
+  .vb-note{font-size:12.5px;color:var(--dim);margin-top:18px;border-top:1px solid var(--line2);padding-top:14px}
 
   /* PROOF tiles */
   .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px}
@@ -213,6 +276,12 @@
   .bounds{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:34px}
   .bound{font-size:13px;color:var(--mut);background:var(--panel);border:1px solid var(--line);border-radius:30px;padding:8px 16px;display:flex;align-items:center;gap:8px}
   .bound .x{color:var(--terra);font-weight:700}
+  .sides{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:760px;margin:0 auto;text-align:left}
+  .side{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px 24px}
+  .side-ic{width:46px;height:46px;border-radius:13px;background:#fff;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:14px}
+  .side-h{font-weight:700;font-size:18px;letter-spacing:-.01em;margin-bottom:7px}
+  .side-d{font-size:14px;color:var(--mut);line-height:1.55}
+  .vtx2{font-size:14px;font-weight:600;color:var(--txt);line-height:1.35;min-height:19px}
 
   /* FINAL CTA */
   .final{text-align:center;padding:104px 0}
@@ -242,14 +311,13 @@
 
 <nav>
   <div class="nav-in">
-    <div class="logo"><span class="dot"></span>Callie</div>
+    <div class="logo"><span class="dot"></span>Callie Care</div>
     <div class="navr">
       <div class="navlinks">
         <a href="#hood">How it works</a>
         <a href="#skills">Skills</a>
         <a href="#family">For family</a>
       </div>
-      <span class="ph"><span class="live"></span>LAUNCHING ON PRODUCT HUNT</span>
       <button class="btn" onclick="document.getElementById('cta').scrollIntoView()">Join waitlist</button>
     </div>
   </div>
@@ -261,8 +329,8 @@
   <section class="hero">
     <div class="reveal">
       <div class="kick">Autonomous care agent</div>
-      <h1>An operator for<br>getting older.<br><span class="g">Not another babysitter.</span></h1>
-      <p class="sub">Callie runs the day-to-day logistics of aging at home, booking, refilling, scheduling, screening, so your parent keeps their independence and you stop being the call center.</p>
+      <h1>One AI agent <span class="g">for the hundred calls of</span> caring for Mom.</h1>
+      <p class="sub">Callie Care runs the day-to-day logistics of aging at home, booking, refilling, scheduling, screening, so your parent keeps their independence and you stop being the call center.</p>
       <form class="form" onsubmit="joinList(event)">
         <input type="email" placeholder="you@email.com" required>
         <button class="btn btn-t">Get early access</button>
@@ -270,26 +338,20 @@
       <div class="meta">Join <b>1,400+</b> families on the waitlist · No app for your parent</div>
     </div>
 
-    <div class="panel reveal">
-      <div class="ptop"><span class="t">Mom · Today</span><span class="d">Callie did this for you</span></div>
-      <div class="row">
-        <div class="ic done">✓</div>
-        <div class="rtxt"><div class="h">Booked Dr. Chen, cardiology</div><div class="s">Thu 2:30pm · ride there & back arranged</div></div>
-        <div class="stamp">9:04</div>
+    <div class="hero-visual reveal">
+      <div class="hero-photo">
+        <img src="https://images.unsplash.com/photo-1566616213894-2d4e1baee5d8?w=680&h=860&fit=crop&crop=faces&q=72" alt="Mom, looked after at home">
+        <div class="pcap"><div class="pn">Mom</div><div class="pm">Home, and looked after.</div></div>
       </div>
-      <div class="row">
-        <div class="ic done">✓</div>
-        <div class="rtxt"><div class="h">Refilled blood-pressure meds</div><div class="s">Pickup confirmed, CVS on Elm</div></div>
-        <div class="stamp">11:20</div>
-      </div>
-      <div class="row propose">
-        <div class="ic">!</div>
-        <div class="rtxt">
-          <div class="h">Caregiver wants to move Fri visit</div>
-          <div class="s">Callie found Sat 10am works for everyone.</div>
-          <div class="pact"><button class="approve" onclick="approve(this)">Approve</button><button class="decline">Not now</button></div>
+      <div class="hero-phone">
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="statusbar"><span>9:41</span><span class="sbi">5G<span class="batt"></span></span></div>
+            <div class="app"></div>
+            <div class="composer"><div class="cin">Hold to talk to Callie Care…</div><div class="cmic">🎙</div></div>
+          </div>
+          <div class="island"></div>
         </div>
-        <div class="stamp">now</div>
       </div>
     </div>
   </section>
@@ -304,23 +366,17 @@
 
   <!-- UNDER THE HOOD -->
   <section class="block" id="hood">
-    <div class="hood-head">
-      <div class="reveal">
-        <div class="seclabel">Under the hood</div>
-        <h2>Watch the agent actually do the work.</h2>
-        <p class="lead">Most assistants answer a question. Callie picks up the phone, sits on hold, books, confirms with everyone and tracks it to done. Here's a real run, step by step.</p>
-      </div>
-    </div>
-
     <div class="hood-grid">
       <div class="hood-copy reveal">
-        <div class="pick">Pick a scenario</div>
+        <div class="seclabel">Under the hood</div>
+        <h2>Watch the agent actually do the work.</h2>
+        <p class="lead">Most assistants answer a question. Callie Care picks up the phone, sits on hold, books, confirms with everyone and tracks it to done.</p>
+        <div class="pick" style="margin-top:30px">Pick a scenario</div>
         <div class="tabs">
           <button class="tab on" onclick="playApp(0)"><span class="ti">📞</span>Doctor visit, end-to-end</button>
           <button class="tab" onclick="playApp(1)"><span class="ti">💊</span>Med refill cycle</button>
           <button class="tab" onclick="playApp(2)"><span class="ti">🗓️</span>Reschedule the caregiver</button>
         </div>
-        <button class="replay" onclick="replayCurrent()">↻ Replay this run</button>
         <div class="hoodnote">It plays in real time, the way it shows up on the family's phone.</div>
       </div>
 
@@ -329,6 +385,7 @@
           <div class="phone-screen">
             <div class="statusbar"><span>9:41</span><span class="sbi">5G<span class="batt"></span></span></div>
             <div class="app" id="app"></div>
+            <div class="composer"><div class="cin">Hold to talk to Callie Care…</div><div class="cmic">🎙</div></div>
           </div>
           <div class="island"></div>
         </div>
@@ -343,12 +400,12 @@
       <h2>One agent. One memory. A growing set of things it just handles.</h2>
     </div>
     <div class="skills reveal">
-      <div class="skill"><div class="sn">01</div><div class="st"><span class="gi">📞</span>Hold-the-line</div><div class="sd">Sits on hold with Medicare, the insurer, the provider. Disputes the bill. Stays on the line so the family doesn't have to.</div><span class="tag exec">CALLIE DOES IT</span></div>
-      <div class="skill"><div class="sn">02</div><div class="st"><span class="gi">🛡️</span>Scam shield</div><div class="sd">When Callie is Mom's line, robocalls and gift-card scams hit the agent first, not her. The family sees what was blocked.</div><span class="tag exec">CALLIE DOES IT</span></div>
-      <div class="skill"><div class="sn">03</div><div class="st"><span class="gi">🩺</span>Appointments + rides</div><div class="sd">Calls the office, books the slot, arranges a round-trip ride, reminds everyone the day before and the day of.</div><span class="tag exec">CALLIE DOES IT</span></div>
-      <div class="skill"><div class="sn">04</div><div class="st"><span class="gi">💊</span>Med refills</div><div class="sd">Tracks the supply on calls, notices it's running low, proposes the refill, orders on approval, follows the delivery. Refills, never doses.</div><span class="tag exec">CALLIE DOES IT</span></div>
-      <div class="skill"><div class="sn">05</div><div class="st"><span class="gi">🧾</span>Bill comprehension</div><div class="sd">Reads the confusing statement, explains it in plain words, flags the weird charge, reminds about the due date. Never moves money.</div><span class="tag exec">EXPLAINS, NOT PAYS</span></div>
-      <div class="skill"><div class="sn">06</div><div class="st"><span class="gi">🌍</span>Speaks her language</div><div class="sd">Talks with your parent in their native language, so the wall between them and the US system isn't language anymore.</div><span class="tag live">LIVE</span></div>
+      <div class="skill"><div class="sn">01</div><div class="st"><span class="gi">📞</span>Hold-the-line</div><div class="sd">Sits on hold with Medicare, the insurer, the provider. Disputes the bill. Stays on the line so the family doesn't have to.</div></div>
+      <div class="skill"><div class="sn">02</div><div class="st"><span class="gi">🛡️</span>Scam shield</div><div class="sd">When Callie Care is Mom's line, robocalls and gift-card scams hit the agent first, not her. The family sees what was blocked.</div></div>
+      <div class="skill"><div class="sn">03</div><div class="st"><span class="gi">🩺</span>Appointments + rides</div><div class="sd">Calls the office, books the slot, arranges a round-trip ride, reminds everyone the day before and the day of.</div></div>
+      <div class="skill"><div class="sn">04</div><div class="st"><span class="gi">💊</span>Med refills</div><div class="sd">Tracks the supply on calls, notices it's running low, proposes the refill, orders on approval, follows the delivery. Refills, never doses.</div></div>
+      <div class="skill"><div class="sn">05</div><div class="st"><span class="gi">🧾</span>Bill comprehension</div><div class="sd">Reads the confusing statement, explains it in plain words, flags the weird charge, reminds about the due date. Never moves money.</div></div>
+      <div class="skill"><div class="sn">06</div><div class="st"><span class="gi">🌍</span>Speaks her language</div><div class="sd">Talks with your parent in their native language, so the wall between them and the US system isn't language anymore.</div></div>
     </div>
   </section>
 
@@ -359,33 +416,39 @@
         <div class="seclabel">For the family</div>
         <h2>Mission control, not another worry feed.</h2>
         <p class="lead">Your parent needs zero devices, just the phone. You get an app that runs the whole thing.</p>
-        <div class="feat"><div class="fn">01</div><div><div class="fh">See everything</div><div class="fd">A live feed of what Callie did and what she noticed. Peace of mind, not a dashboard of alarms.</div></div></div>
-        <div class="feat"><div class="fn">02</div><div><div class="fh">Delegate anything</div><div class="fd">"Take Mom to the cardiologist Thursday." Callie takes it from there, across every party involved.</div></div></div>
-        <div class="feat"><div class="fn">03</div><div><div class="fh">Callie proposes, you approve</div><div class="fd">She spots what needs doing and suggests it. You tap approve. The agent executes. Control stays with the family.</div></div></div>
+        <div class="feat"><div class="fn">01</div><div><div class="fh">See everything</div><div class="fd">A live feed of what Callie Care did and what she noticed. Peace of mind, not a dashboard of alarms.</div></div></div>
+        <div class="feat"><div class="fn">02</div><div><div class="fh">Delegate anything</div><div class="fd">"Take Mom to the cardiologist Thursday." Callie Care takes it from there, across every party involved.</div></div></div>
+        <div class="feat"><div class="fn">03</div><div><div class="fh">Callie Care proposes, you approve</div><div class="fd">She spots what needs doing and suggests it. You tap approve. The agent executes. Control stays with the family.</div></div></div>
       </div>
 
-      <div class="panel reveal">
-        <div class="ptop"><span class="t">Needs your approval</span><span class="d mono">2 pending</span></div>
-        <div class="row propose">
-          <div class="ic">!</div>
-          <div class="rtxt">
-            <div class="h">Refill Lisinopril — 4 days left</div>
-            <div class="s">CVS on Elm, ready for pickup tomorrow. $0 copay.</div>
-            <div class="pact"><button class="approve" onclick="approve(this)">Approve</button><button class="decline">Not now</button></div>
+      <div class="phone-wrap fam reveal">
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="statusbar"><span>9:41</span><span class="sbi">5G<span class="batt"></span></span></div>
+            <div class="app">
+              <div class="mc-head">
+                <div class="mc-av stop"><img src="https://images.unsplash.com/photo-1566616213894-2d4e1baee5d8?w=120&h=120&fit=crop&crop=faces&q=70" alt=""></div>
+                <div class="mc-id"><div class="mc-name">Mom · This week</div><div class="mc-sub">2 things need your okay</div></div>
+                <div class="mc-live"><span class="pd"></span>2 TO OK</div>
+              </div>
+              <div class="mc-cap" style="display:block">Waiting for you</div>
+              <div class="appr">
+                <div class="appr-top"><div class="ltile">💊</div><div class="l-meta"><div class="lname">Refill Lisinopril</div><div class="lwho">CVS on Elm · $0 copay · ready tomorrow</div></div></div>
+                <div class="appr-act"><button class="approve" onclick="approveCard(this)">Approve</button><button class="decline">Not now</button></div>
+              </div>
+              <div class="appr">
+                <div class="appr-top"><div class="ltile">🩺</div><div class="l-meta"><div class="lname">Book annual eye exam</div><div class="lwho">Dr. Patel · Tue 10am · ride included</div></div></div>
+                <div class="appr-act"><button class="approve" onclick="approveCard(this)">Approve</button><button class="decline">Not now</button></div>
+              </div>
+              <div class="mc-cap" style="display:block">Done today</div>
+              <div class="mc-feed">
+                <div class="dcard"><div class="dtile">✓</div><div class="d-tx"><div class="dh">Blocked a gift-card scam</div><div class="ds">Caller claimed "Medicare." Ended in 8s.</div></div><div class="dtime">8:41 AM</div></div>
+                <div class="dcard"><div class="dtile">✓</div><div class="d-tx"><div class="dh">Booked Dr. Chen, cardiology</div><div class="ds">Thu 2:30pm · ride arranged</div></div><div class="dtime">9:04 AM</div></div>
+              </div>
+            </div>
+            <div class="composer"><div class="cin">Ask Callie Care to handle something…</div><div class="cmic">🎙</div></div>
           </div>
-        </div>
-        <div class="row propose">
-          <div class="ic">!</div>
-          <div class="rtxt">
-            <div class="h">Book annual eye exam</div>
-            <div class="s">Dr. Patel has Tue 10am. Ride included.</div>
-            <div class="pact"><button class="approve" onclick="approve(this)">Approve</button><button class="decline">Not now</button></div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="ic done">✓</div>
-          <div class="rtxt"><div class="h">Blocked a gift-card scam call</div><div class="s">Caller claimed to be "Medicare." Ended in 8 sec.</div></div>
-          <div class="stamp">8:41</div>
+          <div class="island"></div>
         </div>
       </div>
     </div>
@@ -393,15 +456,26 @@
 
   <!-- VOICE -->
   <section class="block" style="padding-top:0">
-    <div class="reveal">
-      <div class="seclabel">The voice</div>
-      <h2>A real conversation, not "press 1 for English."</h2>
-      <p class="lead">Human-like voice with memory. Callie calls first, remembers the grandkids' names, the meds, last week's doctor. The on-ramp for an 85-year-old is zero: just a phone ringing.</p>
-    </div>
-    <div class="voice reveal">
-      <button class="play">▶</button>
-      <div class="wave" id="wave"></div>
-      <div style="font-size:12px" class="mono" >0:12 · Mary, morning check-in</div>
+    <div class="split">
+      <div class="reveal">
+        <div class="seclabel">The voice</div>
+        <h2>A real conversation, not "press 1 for English."</h2>
+        <p class="lead">Human-like voice with memory. Callie Care calls first, remembers the grandkids' names, the meds, last week's doctor. The on-ramp for an 85-year-old is zero: just a phone ringing.</p>
+      </div>
+      <div class="voicebox reveal">
+        <div class="vb-top">
+          <div class="vb-h">Hear a morning check-in</div>
+          <div class="vb-sel"><span class="vbtab on">Mary</span></div>
+        </div>
+        <div class="vb-player">
+          <button class="play">▶</button>
+          <div class="vb-mid">
+            <div class="wave" id="wave"></div>
+            <div class="vb-meta"><b>0:12</b> · <span id="vbname">Mary, ex-artist from LA</span></div>
+          </div>
+        </div>
+        <div class="vb-note">A warm, human voice, not a robot. The on-ramp for your parent is zero: just a phone ringing.</div>
+      </div>
     </div>
   </section>
 
@@ -412,8 +486,8 @@
       <h2>The phone is where caregiving actually hurts.</h2>
     </div>
     <div class="tiles reveal">
-      <div class="tile"><div class="big"><span>47</span> min</div><div class="tl">Sat on hold with Medicare</div><div class="tp">So Mom didn't have to. Callie waited, navigated the menu, got the answer, logged it for the family.</div></div>
-      <div class="tile"><div class="big">$<span>4,000</span></div><div class="tl">Scam stopped at the door</div><div class="tp">A gift-card scam aimed at Mom hit Callie first. Blocked, logged, family notified. She never knew.</div></div>
+      <div class="tile"><div class="big"><span>47</span> min</div><div class="tl">Sat on hold with Medicare</div><div class="tp">So Mom didn't have to. Callie Care waited, navigated the menu, got the answer, logged it for the family.</div></div>
+      <div class="tile"><div class="big">$<span>4,000</span></div><div class="tl">Scam stopped at the door</div><div class="tp">A gift-card scam aimed at Mom hit Callie Care first. Blocked, logged, family notified. She never knew.</div></div>
       <div class="tile"><div class="big"><span>0</span> taps</div><div class="tl">From the family, all day</div><div class="tp">Three calls made, one ride booked, one refill ordered. Nobody in the family had to pick up the phone.</div></div>
     </div>
   </section>
@@ -421,13 +495,25 @@
   <!-- TRUST -->
   <section class="block" style="padding-top:0">
     <div class="trust reveal">
-      <div class="quote">"I do not need an electronic babysitter."<br><span>He was right. Callie isn't one. It's an operator that works for her.</span></div>
-      <div class="attr">SAM COOPER · THE BOROUGHS, 2026</div>
+      <div class="seclabel" style="text-align:center">How it works</div>
+      <h2 style="text-align:center;margin:0 auto 6px">An app for you. Just a phone call for Mom.</h2>
+      <p class="lead" style="text-align:center;margin:14px auto 32px">No devices, no apps, nothing to install for your parent. You run everything from your phone. Callie Care reaches Mom the way she already knows, a normal phone call.</p>
+      <div class="sides">
+        <div class="side">
+          <div class="side-ic">📱</div>
+          <div class="side-h">For you</div>
+          <div class="side-d">An app and an AI agent that does the legwork. Delegate a task, approve what matters, and see everything Callie Care handled, from anywhere.</div>
+        </div>
+        <div class="side">
+          <div class="side-ic">📞</div>
+          <div class="side-h">For Mom</div>
+          <div class="side-d">Just her phone ringing, like a friend calling. No app, no device, no password, nothing new to learn at 85. She picks up and talks.</div>
+        </div>
+      </div>
       <div class="bounds">
         <span class="bound"><span class="x">×</span> Never moves money</span>
         <span class="bound"><span class="x">×</span> Never diagnoses</span>
-        <span class="bound"><span class="x">×</span> Sensitive actions need family approval</span>
-        <span class="bound"><span class="x">×</span> Zero devices for your parent</span>
+        <span class="bound"><span class="x">×</span> Sensitive actions need your approval</span>
       </div>
     </div>
   </section>
@@ -442,7 +528,7 @@
         <input type="email" placeholder="you@email.com" required>
         <button class="btn btn-t">Get early access</button>
       </form>
-      <div class="meta">Join <b>1,400+</b> families · Launching on Product Hunt soon</div>
+      <div class="meta">Join <b>1,400+</b> families on the waitlist</div>
     </div>
   </section>
 
@@ -450,7 +536,7 @@
 
 <footer>
   <div class="wrap foot">
-    <div class="logo"><span class="dot"></span>Callie</div>
+    <div class="logo"><span class="dot"></span>Callie Care</div>
     <div class="c">An operating system for aging at home.</div>
     <div class="fl"><a href="#hood">How it works</a><a href="#skills">Skills</a><a href="#cta">Waitlist</a></div>
   </div>
@@ -458,152 +544,153 @@
 
 <script>
   const scenarios=[
-    { task:'Booking a cardiology follow-up + a ride', steps:[
+    { req:"Book Mom's cardiologist Thursday, with a ride.", next:{text:'Review this month’s insurance statement', sub:'Queued for tomorrow'}, task:'Booking a cardiology follow-up + a ride', steps:[
       {type:'act', icon:'📋', text:'Pulling Mom’s records', done:'Records ready', doneSub:'Dr. Chen · cardiology · Medicare on file', dur:1700},
       {type:'call', icon:'🏥', who:'Mercy Cardiology', sub:'Cardiology scheduling', hold:252, dur:3400, done:'Booked Thu, May 14 · 2:30pm', doneSub:'Confirmed by the front desk'},
       {type:'act', icon:'🚗', text:'Arranging a round-trip ride', done:'Ride booked', doneSub:'Pickup 1:45pm · return on call', dur:1800},
       {type:'act', icon:'💬', text:'Updating the family', done:'Mom + family notified', doneSub:'Text sent · added to the feed', dur:1500},
       {type:'done', text:'All done', sub:'3 calls · 11 min · 0 taps from you'}
     ]},
-    { task:'Keeping Mom’s prescriptions from running out', steps:[
+    { req:"Make sure Mom doesn't run out of her meds.", next:{text:'Confirm she picks it up', sub:'Callie Care will follow up'}, task:'Keeping Mom’s prescriptions from running out', steps:[
       {type:'act', icon:'👂', text:'Listening on the check-in call', done:'Noticed she’s running low', doneSub:'“Down to a few pills”', dur:1700},
       {type:'act', icon:'💊', text:'Checking her prescription', done:'Lisinopril · 4 days left', doneSub:'Matched against her med list', dur:1600},
       {type:'act', icon:'✅', text:'Asking the family to approve', done:'Family approved the refill', doneSub:'$0 copay · CVS on Elm', dur:1900},
       {type:'call', icon:'🏪', who:'CVS Pharmacy', sub:'Refill desk', hold:64, dur:3000, done:'Refill ready for pickup', doneSub:'Pickup arranged for tomorrow'},
       {type:'done', text:'All done', sub:'Delivered and tracked to Mom’s hands'}
     ]},
-    { task:'Moving Friday’s caregiver visit', steps:[
+    { req:"Move Friday's caregiver visit to the weekend.", next:{text:'Verify the caregiver arrives Saturday', sub:'Callie Care will check in'}, task:'Moving Friday’s caregiver visit', steps:[
       {type:'call', icon:'🏢', who:'Care agency', sub:'Scheduling line', hold:78, dur:3300, done:'New slot negotiated', doneSub:'Saturday 10am is open'},
       {type:'act', icon:'🤝', text:'Checking it works for everyone', done:'Sat 10am works for all', doneSub:'Caregiver + Mom good to go', dur:1700},
       {type:'act', icon:'✅', text:'Getting family approval', done:'Family approved', doneSub:'Calendar updated', dur:1600},
       {type:'act', icon:'🔔', text:'Confirming with everyone', done:'Everyone confirmed + reminded', doneSub:'Caregiver, agency and Mom', dur:1700},
-      {type:'done', text:'All done', sub:'Callie will verify she actually arrives'}
+      {type:'done', text:'All done', sub:'Callie Care will verify she actually arrives'}
     ]}
   ];
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let curApp=0, holdInt=null, runId=0, timers=[], feedClock=9*60+41;
-  function clearTimers(){ timers.forEach(clearTimeout); timers=[]; clearInterval(holdInt); }
+  const AV='https://images.unsplash.com/photo-1566616213894-2d4e1baee5d8?w=120&h=120&fit=crop&crop=faces&q=70';
   function waveBars(n){ let h=''; for(let k=0;k<n;k++){ h+='<i style="animation-delay:'+(k*0.05).toFixed(2)+'s"></i>'; } return h; }
-  function stamp(){ const h=Math.floor(feedClock/60); let hh=h%12; if(hh===0)hh=12; return hh+':'+String(feedClock%60).padStart(2,'0')+(h<12?' AM':' PM'); }
+  function voiceBars(){ const hs=[7,13,18,10,15,8,20,12,6,16,9,14,19,8,13,7,11,5]; let h=''; for(let k=0;k<hs.length;k++){ h+='<i style="height:'+hs[k]+'px"></i>'; } return h; }
 
-  function appSkeleton(sc){
-    return '<div class="mc-head">'
-      + '<div class="mc-av" id="mcav">M</div>'
-      + '<div class="mc-id"><div class="mc-name">Mom · Today</div><div class="mc-sub" id="mcsub">'+sc.task+'</div></div>'
-      + '<div class="mc-live" id="mclive"><span class="pd"></span>LIVE</div></div>'
-      + '<div class="mc-bar" id="mcbar"><i></i></div>'
-      + '<div id="live"></div>'
-      + '<div class="mc-cap" id="mccap" style="display:none">Done today</div>'
-      + '<div class="mc-feed" id="feed"></div>';
-  }
-  function setProgress(done,total){
-    const bar=document.getElementById('mcbar'); if(!bar) return;
-    const i=bar.querySelector('i'); if(i) i.style.width=Math.round(done/total*100)+'%';
-  }
-  function renderLive(s,my){
-    const live=document.getElementById('live'); if(!live) return;
-    if(s.type==='call'){
-      live.innerHTML='<div class="lcard call" id="lcard">'
-        +'<div class="l-top"><div class="ltile">'+(s.icon||'📞')+'</div>'
-        +'<div class="l-meta"><div class="lname">'+s.who+'</div><div class="lwho">'+(s.sub||'')+'</div></div></div>'
-        +'<div class="lwave">'+waveBars(34)+'</div>'
-        +'<div class="lstat hold"><span class="pd"></span><span id="lstx">Dialing…</span></div></div>';
-      if(s.hold){ timers.push(setTimeout(()=>{ if(my!==runId)return; startHold(s.hold, s.dur-1500, my); }, 700)); }
-      timers.push(setTimeout(()=>{ if(my!==runId)return; connected(); }, s.dur-650));
-    } else {
-      live.innerHTML='<div class="lcard act" id="lcard">'
-        +'<div class="l-top"><div class="ltile">'+(s.icon||'⚙️')+'</div>'
-        +'<div class="l-meta"><div class="lname">'+s.text+'</div><div class="lwho">Callie is on it…</div></div></div>'
-        +'<div class="lshim"></div></div>';
+  function makePlayer(root, opts){
+    opts=opts||{};
+    let runId=0, holdInt=null, timers=[], feedClock=9*60+41, curApp=0;
+    const $=(s)=>root.querySelector(s);
+    function clr(){ timers.forEach(clearTimeout); timers=[]; clearInterval(holdInt); }
+    function stamp(){ const h=Math.floor(feedClock/60); let hh=h%12; if(hh===0)hh=12; return hh+':'+String(feedClock%60).padStart(2,'0')+(h<12?' AM':' PM'); }
+    function skeleton(){
+      root.innerHTML='<div class="mc-head">'
+        +'<div class="mc-av"><img src="'+AV+'" alt=""></div>'
+        +'<div class="mc-id"><div class="mc-name">Mom · Today</div><div class="mc-sub">Listening…</div></div>'
+        +'<div class="mc-live"><span class="pd"></span>LIVE</div></div>'
+        +'<div class="mc-bar"><i></i></div>'
+        +'<div class="req-slot"></div>'
+        +'<div class="live-slot"></div>'
+        +'<div class="mc-cap" style="display:none">Callie Care handled it</div>'
+        +'<div class="mc-feed"></div>'
+        +'<div class="up-slot"></div>';
     }
+    function setProgress(d,t){ const i=$('.mc-bar i'); if(i) i.style.width=Math.round(d/t*100)+'%'; }
+    function renderReq(sc){ const r=$('.req-slot'); if(!r) return;
+      r.innerHTML='<div class="vbubble"><div class="vh"><span class="pd"></span>You · asked Callie Care</div>'
+        +'<div class="vrow"><span class="vmic">🎙</span><div class="vtx2"></div></div></div>'; }
+    function fillReq(text){ const el=$('.vtx2'); if(el) el.textContent=text; }
+    function typeReq(text,my){ const el=$('.vtx2'); if(!el) return; let i=0;
+      (function t(){ if(my!==runId) return; el.textContent=text.slice(0,i); i++; if(i<=text.length) timers.push(setTimeout(t,26)); })(); }
+    function composerEl(){ const ps=root.parentElement; return ps?ps.querySelector('.composer .cin'):null; }
+    function resetComposer(){ const c=composerEl(); if(c){ c.textContent='Hold to talk to Callie Care…'; c.style.color='var(--dim)'; c.style.fontWeight='500'; } }
+    function typeComposer(text,my,done){ const c=composerEl(); if(!c){ if(done) done(); return; }
+      c.style.color='var(--txt)'; c.style.fontWeight='600'; let i=0;
+      (function t(){ if(my!==runId) return; c.textContent=text.slice(0,i)+'▌'; i++;
+        if(i<=text.length){ timers.push(setTimeout(t,32)); }
+        else { c.textContent=text+'▌'; timers.push(setTimeout(()=>{ if(my!==runId) return; if(done) done(); }, 500)); } })(); }
+    function renderLive(s,my){ const live=$('.live-slot'); if(!live) return;
+      if(s.type==='call'){
+        live.innerHTML='<div class="lcard call"><div class="l-top"><div class="ltile">'+(s.icon||'📞')+'</div>'
+          +'<div class="l-meta"><div class="lname">'+s.who+'</div><div class="lwho">'+(s.sub||'')+'</div></div></div>'
+          +'<div class="lwave">'+waveBars(34)+'</div>'
+          +'<div class="lstat hold"><span class="pd"></span><span class="lstx">Dialing…</span></div></div>';
+        if(s.hold){ timers.push(setTimeout(()=>{ if(my!==runId)return; startHold(s.hold,s.dur-1500,my); },700)); }
+        timers.push(setTimeout(()=>{ if(my!==runId)return; connected(); }, s.dur-650));
+      } else {
+        live.innerHTML='<div class="lcard act"><div class="l-top"><div class="ltile">'+(s.icon||'⚙️')+'</div>'
+          +'<div class="l-meta"><div class="lname">'+s.text+'</div><div class="lwho">Callie Care is on it…</div></div></div>'
+          +'<div class="lshim"></div></div>';
+      }
+    }
+    function startHold(seconds,win,my){ const start=performance.now(); clearInterval(holdInt);
+      holdInt=setInterval(()=>{ if(my!==runId){ clearInterval(holdInt); return; }
+        const e=$('.lstx'); if(!e){ clearInterval(holdInt); return; }
+        const p=Math.min(1,(performance.now()-start)/win); const s=Math.round(p*seconds);
+        e.textContent='On hold · '+Math.floor(s/60)+'m '+String(s%60).padStart(2,'0')+'s';
+        if(p>=1) clearInterval(holdInt); },90); }
+    function connected(){ clearInterval(holdInt);
+      const card=$('.lcard'); if(card) card.classList.add('conn');
+      const pill=$('.lstat'); if(pill){ pill.classList.remove('hold'); pill.classList.add('conn'); }
+      const stx=$('.lstx'); if(stx) stx.textContent='Connected'; }
+    function completeStep(s){ const feed=$('.mc-feed'); if(!feed) return;
+      const cap=$('.mc-cap'); if(cap) cap.style.display='block';
+      feedClock += 3 + Math.floor(Math.random()*4);
+      const card=document.createElement('div'); card.className='dcard';
+      card.innerHTML='<div class="dtile">✓</div><div class="d-tx"><div class="dh">'+(s.done||s.text)+'</div>'
+        +(s.doneSub?'<div class="ds">'+s.doneSub+'</div>':'')+'</div><div class="dtime">'+stamp()+'</div>';
+      feed.insertBefore(card, feed.firstChild); }
+    function finish(sc,doneStep){
+      const live=$('.live-slot'); if(live){ live.innerHTML='<div class="lcard fin"><div class="l-top"><div class="fin-check">✓</div>'
+        +'<div class="l-meta"><div class="lname">'+doneStep.text+'</div><div class="lwho">'+(doneStep.sub||'')+'</div></div></div></div>'; }
+      setProgress(sc.steps.length, sc.steps.length);
+      const sub=$('.mc-sub'); if(sub) sub.textContent='All done · 0 taps from you';
+      const lv=$('.mc-live'); if(lv){ lv.classList.add('done'); lv.innerHTML='<span class="pd"></span>DONE'; }
+      const bar=$('.mc-bar'); if(bar) bar.classList.add('done');
+      const av=$('.mc-av'); if(av) av.classList.add('stop');
+      if(sc.next){ const up=$('.up-slot'); if(up) up.innerHTML='<div class="mc-up"><div class="uptile">⏭</div><div><div class="uph">'+sc.next.text+'</div><div class="ups">'+sc.next.sub+'</div></div><div class="uplab">Up next</div></div>'; }
+      if(opts.loop){ timers.push(setTimeout(function(){ play(curApp); }, 5200)); }
+    }
+    function settle(i){ curApp=i; clr(); feedClock=9*60+41; const sc=scenarios[i]; skeleton(); resetComposer(); renderReq(sc); fillReq(sc.req);
+      sc.steps.forEach(s=>{ if(s.type!=='done') completeStep(s); }); finish(sc, sc.steps[sc.steps.length-1]); }
+    function play(i){ curApp=i; const my=++runId; clr(); feedClock=9*60+41;
+      if(opts.tabs){ document.querySelectorAll('.tab').forEach((t,k)=>t.classList.toggle('on',k===i)); }
+      const sc=scenarios[i]; skeleton(); setProgress(0, sc.steps.length);
+      if(reduceMotion){ renderReq(sc); sc.steps.forEach(s=>{ if(s.type!=='done') completeStep(s); }); finish(sc, sc.steps[sc.steps.length-1]); return my; }
+      const sub=$('.mc-sub');
+      let idx=0;
+      function nextStep(){ if(my!==runId) return; const s=sc.steps[idx];
+        if(s.type==='done'){ finish(sc,s); return; }
+        renderLive(s,my);
+        timers.push(setTimeout(()=>{ if(my!==runId) return; completeStep(s); idx++; setProgress(idx, sc.steps.length); nextStep(); }, s.dur||1500)); }
+      resetComposer();
+      if(sub) sub.textContent='Listening…';
+      // 1) the family types the task into the input, 2) it sends as a message, 3) Callie Care works
+      timers.push(setTimeout(()=>{ if(my!==runId) return;
+        typeComposer(sc.req, my, ()=>{ if(my!==runId) return;
+          resetComposer();
+          renderReq(sc); fillReq(sc.req);
+          if(sub) sub.textContent='Got it, on it…';
+          timers.push(setTimeout(()=>{ if(my!==runId) return; nextStep(); }, 650));
+        });
+      }, 650));
+      return my;
+    }
+    return { play:play, settle:settle, replay:function(){ return play(curApp); } };
   }
-  function startHold(seconds,win,my){
-    const start=performance.now();
-    clearInterval(holdInt);
-    holdInt=setInterval(()=>{
-      if(my!==runId){ clearInterval(holdInt); return; }
-      const e=document.getElementById('lstx'); if(!e){ clearInterval(holdInt); return; }
-      const p=Math.min(1,(performance.now()-start)/win);
-      const s=Math.round(p*seconds);
-      e.textContent='On hold · '+Math.floor(s/60)+'m '+String(s%60).padStart(2,'0')+'s';
-      if(p>=1) clearInterval(holdInt);
-    },90);
-  }
-  function connected(){
-    clearInterval(holdInt);
-    const card=document.getElementById('lcard'); if(card) card.classList.add('conn');
-    const pill=document.querySelector('.lstat'); if(pill){ pill.classList.remove('hold'); pill.classList.add('conn'); }
-    const stx=document.getElementById('lstx'); if(stx) stx.textContent='Connected';
-  }
-  function completeStep(s){
-    const feed=document.getElementById('feed'); if(!feed) return;
-    const cap=document.getElementById('mccap'); if(cap) cap.style.display='block';
-    feedClock += 3 + Math.floor(Math.random()*4);
-    const card=document.createElement('div');
-    card.className='dcard';
-    card.innerHTML='<div class="dtile">✓</div><div class="d-tx"><div class="dh">'+(s.done||s.text)+'</div>'
-      +(s.doneSub?'<div class="ds">'+s.doneSub+'</div>':'')+'</div><div class="dtime">'+stamp()+'</div>';
-    feed.insertBefore(card, feed.firstChild);
-  }
-  function finishApp(sc,doneStep){
-    const live=document.getElementById('live');
-    if(live){ live.innerHTML='<div class="lcard fin"><div class="l-top"><div class="fin-check">✓</div>'
-      +'<div class="l-meta"><div class="lname">'+doneStep.text+'</div><div class="lwho">'+(doneStep.sub||'')+'</div></div></div></div>'; }
-    setProgress(sc.steps.length, sc.steps.length);
-    const sub=document.getElementById('mcsub'); if(sub) sub.textContent='All done for today';
-    const live2=document.getElementById('mclive'); if(live2){ live2.classList.add('done'); live2.innerHTML='<span class="pd"></span>DONE'; }
-    const bar=document.getElementById('mcbar'); if(bar) bar.classList.add('done');
-    const av=document.getElementById('mcav'); if(av) av.classList.add('stop');
-  }
-  function playApp(i){
-    curApp=i;
-    const my=++runId;
-    clearTimers();
-    feedClock=9*60+41;
-    document.querySelectorAll('.tab').forEach((t,k)=>t.classList.toggle('on',k===i));
-    const sc=scenarios[i];
-    document.getElementById('app').innerHTML=appSkeleton(sc);
-    setProgress(0, sc.steps.length);
-    if(reduceMotion){ sc.steps.forEach(s=>{ if(s.type!=='done') completeStep(s); }); finishApp(sc, sc.steps[sc.steps.length-1]); return; }
-    let idx=0;
-    (function next(){
-      if(my!==runId) return;
-      const s=sc.steps[idx];
-      if(s.type==='done'){ finishApp(sc,s); return; }
-      renderLive(s,my);
-      timers.push(setTimeout(()=>{
-        if(my!==runId) return;
-        completeStep(s);
-        idx++;
-        setProgress(idx, sc.steps.length);
-        next();
-      }, s.dur||1500));
-    })();
-  }
-  function replayCurrent(){ playApp(curApp); }
 
-  // initial settled state (before scroll)
-  (function(){
-    feedClock=9*60+41;
-    const sc=scenarios[0];
-    document.getElementById('app').innerHTML=appSkeleton(sc);
-    sc.steps.forEach(s=>{ if(s.type!=='done') completeStep(s); });
-    finishApp(sc, sc.steps[sc.steps.length-1]);
-  })();
-  let appPlayed=false;
-  const appIO=new IntersectionObserver((es)=>{
-    es.forEach(e=>{ if(e.isIntersecting && !appPlayed){ appPlayed=true; playApp(0); } });
-  },{threshold:0.35});
-  appIO.observe(document.getElementById('app'));
+  const heroPlayer = (function(){ const el=document.querySelector('.hero-phone .app'); return el?makePlayer(el,{loop:true}):null; })();
+  const hoodPlayer = (function(){ const el=document.querySelector('#hood .app'); return el?makePlayer(el,{tabs:true}):null; })();
+  function playApp(i){ if(hoodPlayer) hoodPlayer.play(i); }
+  function replayCurrent(){ if(hoodPlayer) hoodPlayer.replay(); }
 
-  function approve(btn){
-    const rtxt=btn.closest('.rtxt');
-    const row=btn.closest('.row');
-    row.classList.remove('propose');
-    const h=rtxt.querySelector('.h').textContent;
-    rtxt.innerHTML='<div class="h">'+h+'</div><div class="s" style="color:var(--green)">✓ Approved — Callie is on it.</div>';
-    const ic=row.querySelector('.ic'); ic.className='ic done'; ic.textContent='✓';
+  if(heroPlayer){ if(reduceMotion) heroPlayer.settle(0); else heroPlayer.play(0); }
+  if(hoodPlayer) hoodPlayer.settle(0);
+  let hoodPlayed=false;
+  const hoodEl=document.querySelector('#hood .app');
+  if(hoodEl){ const appIO=new IntersectionObserver((es)=>{ es.forEach(e=>{ if(e.isIntersecting && !hoodPlayed){ hoodPlayed=true; if(hoodPlayer && !reduceMotion) hoodPlayer.play(0); } }); },{threshold:0.35}); appIO.observe(hoodEl); }
+
+  function approveCard(btn){
+    const card=btn.closest('.appr'); if(!card) return;
+    const name=(card.querySelector('.lname')||{}).textContent||'Done';
+    card.style.borderColor='rgba(31,157,63,.32)';
+    card.style.background='linear-gradient(165deg,rgba(31,157,63,.09),rgba(31,157,63,.02))';
+    card.innerHTML='<div class="appr-top"><div class="ltile" style="background:rgba(31,157,63,.12);border-color:rgba(31,157,63,.3);color:var(--green)">✓</div><div class="l-meta"><div class="lname">'+name+'</div><div class="lwho" style="color:var(--green)">Approved, Callie Care is on it.</div></div></div>';
   }
 
   function joinList(e){
@@ -617,6 +704,7 @@
   // waveform
   const wave=document.getElementById('wave');
   if(wave){for(let i=0;i<46;i++){const b=document.createElement('i');b.style.height=(8+Math.abs(Math.sin(i*0.6))*30)+'px';b.style.opacity=(0.3+Math.random()*0.6).toFixed(2);wave.appendChild(b);}}
+  function voiceTab(btn,name){ document.querySelectorAll('.vbtab').forEach(b=>b.classList.remove('on')); btn.classList.add('on'); const n=document.getElementById('vbname'); if(n) n.textContent=name; }
 
   // reveal
   const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:0.12});
